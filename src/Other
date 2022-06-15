@@ -1,0 +1,31 @@
+	// json-simple
+		JSONObject employeeDetails = new JSONObject();
+		employeeDetails.put("firstname", "Rodney");
+		employeeDetails.put("lastname", "Azevedo");
+		
+		JSONObject employeeObject = new JSONObject();
+		employeeObject.put("employee", employeeDetails);
+		
+		JSONObject employeeDetails2 = new JSONObject();
+		employeeDetails.put("firstname", "Paula");
+		employeeDetails.put("lastname", "Azevedo");
+		
+		JSONObject employeeObject2 = new JSONObject();
+		employeeObject.put("employee", employeeDetails);
+		
+		JSONArray employeeList = new JSONArray();
+		employeeList.add(employeeObject);
+		employeeList.add(employeeObject2);
+		
+		try {
+			FileWriter file = new FileWriter("jsonsimple.json");
+			file.write(employeeList.toJSONString());
+			//System.out.println(employeeList.toJSONString().toString());
+			file.flush();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		// Gson
+		
